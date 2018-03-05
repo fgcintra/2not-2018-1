@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      /*
+         Escreva um programa que obtenha um ano do usuário e
+         informe se um ano PODE ser bissexto ou não.
+         - Dê uma mensagem de erro com alert() caso a entrada
+           informada não seja um número.
+         - Use document.write para informar se o ano indicado
+           pode ser bissexto ou não. 
+      */
+
+      var ano = parseInt(prompt('Informe um ano:'));
+
+      // Verifica se a conversão do parseInt() falhou
+      if(isNaN(ano)) {
+         alert('O ANO INFORMADO NÃO É VÁLIDO!');
+      }
+      else {
+         
+         // Teste de divisão por 400
+         if(ano % 400 == 0) {
+            document.write('É bissexto');
+         } 
+         
+         // Teste de divisão por 100
+         else if(ano % 100 == 0) {
+            document.write('NÃO é bissexto');
+         }
+
+         // Teste de divisão por 4
+         else if(ano % 4 == 0) {
+            document.write('É bissexto');   
+         }
+
+         else {
+            document.write('NÃO é bissexto');   
+         }
+
+      }
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+         /*
+         // Entrada de dados
+         var nome = prompt('Digite seu nome');
+
+         document.write('Olá, ' + nome);
+         console.log(typeof nome);
+         */
+
+         var num1 = parseFloat(prompt('Digite o primeiro número'));
+         var num2 = parseFloat(prompt('Digite o segundo número'));
+
+         console.log(typeof num1);
+         console.log(typeof num2);
+
+         if(isNaN(num1)) {
+            alert('O PRIMEIRO VALOR NÃO É UM NÚMERO!');
+         }
+
+         if(isNaN(num2)) {
+            alert('O SEGUNDO VALOR NÃO É UM NÚMERO!');
+         }
+
+         if(!(isNaN(num1) || isNaN(num2))) {
+
+            var resultado = num1 + num2;
+
+            alert('A soma dos dois números é ' + resultado);
+         }
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

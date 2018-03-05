@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      /*
+         Demonstração da estrutura de decisão switch
+      */
+
+      var num1 = parseFloat(prompt('Informe o primeiro número:'));
+      var num2 = parseFloat(prompt('Informe o segundo número:'));
+      var op = prompt('Escolha uma operação aritmética (+, -, * ou /)');
+      
+      var resultado;
+
+      switch(op) {
+         case '+':
+            resultado = num1 + num2;
+            break;
+
+         case '-':
+            resultado = num1 - num2;
+            break;
+
+         case 'x':
+         case 'X':
+         case '*':
+            resultado = num1 * num2;
+            break;
+
+         case '/':
+            resultado = num1 / num2;
+            break;
+
+         default:
+            alert('INFORME UM OPERADOR ARITMÉTICO VÁLIDO!');
+      }
+
+      document.write('O resultado da operação é ' + resultado);
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>
