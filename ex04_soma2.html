@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+         /*
+            Escreva um programa que leia números informados
+            pelo usuário até que ele informe 0 (zero).
+            Exiba a soma dos valores informados.
+         */
+
+         var num, soma = 0; // Somente soma valerá 0
+
+         //num = parseFloat(prompt('Informe um número a ser somado:'));
+
+         do {
+            
+            num = parseFloat(prompt('Informe um número a ser somado:'));
+            
+            // Não tenta somar entradas que falharam no parseFloat()
+            if(! isNaN(num)) {
+               // soma = soma + num;
+               soma += num;
+            }
+
+         } while (num != 0);
+
+         document.write('A soma dos números informados é ' + soma);
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

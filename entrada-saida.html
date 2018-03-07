@@ -16,7 +16,11 @@
          console.log(typeof nome);
          */
 
-         var num1 = parseFloat(prompt('Digite o primeiro número'));
+         var num1;
+         do {
+            num1 = parseFloat(prompt('Digite o primeiro número'));
+         } while(isNaN(num1));
+
          var num2 = parseFloat(prompt('Digite o segundo número'));
 
          console.log(typeof num1);
