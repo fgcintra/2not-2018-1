@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+         /*
+
+            Escreva um programa que:
+            - Pergunte o usuário um número onde deve parar a contagem.
+              Repita a pergunta enquanto ele não informar um número válido.
+
+            - Pergunte, em seguida, de quanto em quanto a repetição deve
+              saltar. Repita a pergunta enquanto ele não informar um número válido.
+
+            - Inicie o loop em 1 e vá até o número informado pelo usuário, saltando
+              de acordo com o passo informado ao usuário.
+
+            - A cada iteração do loop, escreva com document.write() o valor do
+              número sendo incrementado.
+
+         */
+
+         var limite, passo;
+
+         do {
+            limite = parseInt(prompt('Informe o limite da repetição'));
+         } while(isNaN(limite));
+
+         do {
+            passo = parseInt(prompt('Informe de quanto em quanto a repetição saltará'));
+         } while(isNaN(passo));
+
+         for(var i = 1; i <= limite; i += passo) {
+            document.write(i + '<br>');
+         }
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>
