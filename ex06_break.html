@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+      
+         /*
+            Escreva um programa que encontre o primeiro
+            número divisível por 37 acima de 1000 e depois pare.
+         */
+
+         for(var n = 1001; n < 1038; n++) {
+            if(n % 37 == 0) { // É o cara
+               document.write('O primeiro número acima de 1000 divisível por 37 é ' + n);
+               break; // Interrompe o for, mas serve também para o while e o do..while
+            }
+         }
+
+         document.write('<hr>');
+
+         // Instruções (if, for, while, etc.) vazias podem terminar com ;
+         for (var n = 1001; n % 37 != 0; n++);
+         document.write('O primeiro número acima de 1000 divisível por 37 é ' + n);
+
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

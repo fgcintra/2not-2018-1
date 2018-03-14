@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      /*
+         Escreva um programa que conte regressivamente de 1000 a 0,
+         saltando os números múltiplos de 7 ou múltiplos de 11.
+      */
+
+      for(var x = 1000; x >= 0; --x) {
+         if(x % 7 == 0 || x % 11 == 0) {
+            // continua passa à próxima iteração sem executar as linhas
+            // abaixo dele. Funciona com for, while e do..while
+            continue; 
+         }
+         document.write(x + '<br>');
+      }
+      
+      document.write('<hr>');
+
+      for (var x = 1000; x >= 0; --x) {
+         if (x % 7 != 0 && x % 11 != 0) {
+            document.write(x + '<br>');
+         }
+      }
+
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>
