@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      // Criando um vetor com valores
+      var frutas = ['maçã', 'banana', 'pera', 'mamão'];
+      var carros = Array('Fusca', 'Brasília', 'Opala', 'Variant', 'Maverick');
+      var mistureba = [19, 'cachorro', undefined, -12.4, null, true];
+
+      // Criando vetores vazios
+      var vazio1 = [];
+      var vazio2 = Array();
+
+      // Quantos elementos há no vetor? length
+      document.write('frutas: ' + frutas.length + '<br>');
+      document.write('carros: ' + carros.length + '<br>');
+      document.write('mistureba: ' + mistureba.length + '<br>');
+      document.write('vazio1: ' + vazio1.length + '<br>');
+      document.write('vazio2: ' + vazio2.length + '<br>');
+
+      document.write('<hr>');
+
+      // Listando todos os elementos de um vetor
+      for(var i = 0; i < carros.length; ++i) {
+         document.write(carros[i] + '<br>');
+      }
+
+      // Acessando diretamente o TERCEIRO elemento de carros
+      document.write('O terceiro elemento do vetor carros é ' + carros[2] + '<br>');
+
+      // Acessando diretamente o PRIMEIRO elemento de carros
+      document.write('O primeiro elemento do vetor carros é ' + carros[0]);
+
+      document.write('<hr>');
+
+      // Listando todos os elementos na ordem inversa
+      for(var j = carros.length - 1; j >= 0; --j) {
+         document.write(carros[j] + '<br>');
+      }
+
+      document.write('<hr>');
+
+      // Acrescentando um elemento ao final do vetor: push()
+      carros.push('Fiat 147');
+      vazio1.push(7);
+
+      console.log(carros);
+      console.log(vazio1);
+
+      // Acrescentando um elemento em uma posição específica: splice()
+      
+      // Novo carro na primeira posição
+      // 1º parâmetro: a posição desejada
+      // 2º parâmetro: quantos elementos queremos apagar
+      // 3º parâmetro: o que queremos que seja inserido
+      carros.splice(0, 0, 'Alpha Romeo');
+
+      // Novo carro na QUARTA posição
+      carros.splice(3, 0, 'Delorean');
+
+      console.log(carros);
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>
