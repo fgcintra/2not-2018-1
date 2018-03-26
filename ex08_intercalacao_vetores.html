@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      /*
+         Crie dois vetores, com 10 elementos cada um. Monte um terceiro vetor,
+         intercalando os elementos do primeiro e do segundo vetor. O primeiro
+         vetor deve ser percorrido na ordem ascendente e o segundo em ordem
+         descendente.
+      */
+
+      var vetor1 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+      var vetor2 = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul',
+         'Ago', 'Set', 'Out'];
+      var vetor3 = [];
+      
+      // Duas variáveis no for
+      for(var i = 0, j = vetor2.length - 1; i < vetor1.length && j >= 0; ++i, --j) {
+         vetor3.push(vetor1[i]);
+         vetor3.push(vetor2[j]);   
+      }
+
+      console.log(vetor3);
+      
+      // Solução mais simples
+      vetor3 = []; // Resetando para começar de novo
+      var j;
+
+      for(var i = 0; i < vetor1.length; ++i) {
+         vetor3.push(vetor1[i]);
+         j = vetor2.length - 1 - i;
+         vetor3.push(vetor2[j]);
+      }
+      
+      console.log(vetor3);
+
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>
