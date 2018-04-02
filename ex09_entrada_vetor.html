@@ -24,6 +24,7 @@
 
       var vet = [];
       var num;
+      var msg;
 
       do {
 
@@ -37,11 +38,26 @@
             // que o número na posição atual do vetor
             if(num < vet[i]) {
                // 1) Insere num na posição i do vetor
+               vet.splice(i, 0, num);
                // 2) Cai fora do for
+               break;
             }
          }
 
-         // Exibir o vetor aqui
+         // Quando i chega aqui valendo o mesmo que vet.length:
+         // 1) Ou porque ambos os valores são zero, e então inserimos o primeiro elemento
+         // 2) Ou porque todo o vetor já foi percorrido, e num é maior que todos os elementos
+         //    já existentes
+         if(vet.length == i) {
+            vet.push(num);
+         }
+                  
+         // Exibição do vetor
+         msg = '';
+         for(var n = 0; n < vet.length; ++n) {
+            msg += vet[n] + ', ';
+         }
+         alert(msg);
 
       } while(num != 0);
       
