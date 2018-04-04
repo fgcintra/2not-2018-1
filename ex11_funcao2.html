@@ -14,7 +14,22 @@
             A função deve retornar um novo vetor, cujos elementos são os produtos da multiplicação.
 
          */
+
+         function multiVet(vet, fator) {
+            var res = [];
+            for(var i = 0; i < vet.length; ++i) {
+               res.push(vet[i] * fator);
+            }
+            return res;
+         }
       
+         var prod1 = multiVet([77, 13, 4, 18, -9, 34], 5);
+         console.log(prod1);
+
+         var vetor = [33, 'cavalo', undefined, true, -7];
+         var prod2 = multiVet(vetor, 2);
+         console.log(prod2);
+
       </script>
 
    </head>

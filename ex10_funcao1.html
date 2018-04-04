@@ -18,6 +18,25 @@
             Exiba o valor da soma, FORA da função.
 
          */
+
+         var num;
+
+         do {
+            num = parseInt(prompt('Informe o número-limite para a soma:'));
+         } while(isNaN(num) || num <= 0);
+
+         function somaInt(limite) {
+            var soma = 0;
+            for(var i = 1; i <= limite; ++i) {
+               soma += i;
+            }
+            return soma;
+         }
+
+         var res = somaInt(num);
+
+         document.write(`A soma de todos os números de 1 até ${num} é ${res}.<br>`);
+         document.write('A soma de todos os números de 1 até ' + num + ' é ' + res + '.<br>');
       
       </script>
 
