@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      /*
+
+         8. Escreva uma função que receba o peso e a altura de uma pessoa e retorne seu Índice de Massa Corpórea (IMC), sabendo que o IMC é igual ao peso dividido pela altura elevada ao quadrado.
+      */
+      
+      var peso, altura;
+
+      do {
+         peso = parseFloat(prompt('Peso da pessoa (use . como separador decimal):'));
+      } while(isNaN(peso)); 
+
+      do {
+         altura = parseFloat(prompt('Altura da pessoa (use . como separador decimal):'));
+      } while(isNaN(altura));
+
+      var imc = peso / (altura * altura);
+
+      document.write('O IMC da pessoa é ' + imc); 
+
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

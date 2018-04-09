@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      /*
+         7. Escreva um programa que imprima todos os números primos menores que 1000.
+      */
+
+         var primos = [2]; // 2 é o primeiro número primo
+         var ehPrimo;
+
+         for (var i = 3; i < 1000; i++) {
+            ehPrimo = true;
+            for (var j = 0; j < primos.length; ++j) {
+               if (i % primos[j] == 0) { // Dividiu, não é primo
+                  ehPrimo = false;
+                  break;
+               }
+            }
+            if (ehPrimo) {
+               primos.push(i);
+               document.write(i + '<br>');
+            }
+         }
+
+         console.log(primos);
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

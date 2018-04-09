@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+      
+      /*
+
+      10. Crie uma função que receba um vetor de números e retorne outro vetor. O vetor de retorno deve conter, na ordem:
+        ◦ O menor número do vetor de entrada.
+        ◦ O maior número do vetor de entrada.
+        ◦ A média dos números do vetor de entrada.
+        ◦ A soma dos números do vetor de entrada.      
+
+      */
+
+      function estat(vet) {
+         var ret = [0, 0, 0, 0];
+
+         for(var i = 0; i < vet.length; ++i) {
+            // Soma
+            ret[3] += vet[i];
+
+            // Menor
+            if(vet[i] < ret[0]) {
+               ret[0] = vet[i];
+            }
+
+            // Maior
+            if(vet[i] > ret[1]) {
+               ret[1] = vet[i];
+            } 
+         }
+         // Média
+         ret[2] = ret[3] / vet.length;
+
+         return ret;
+
+      }
+
+      // MASSA DE TESTES
+      var vetor = [19, 34, -2, 6, 87, 22, 90, 45, 0, 7, 39, 11];
+      var info = estat(vetor);
+
+      document.write('Vetor: [19, 34, -2, 6, 87, 22, 90, 45, 0, 7, 39, 11]<br>');
+      document.write('Menor número: ' + info[0] + '<br>');
+      document.write('Maior número: ' + info[1] + '<br>');
+      document.write('Média: ' + info[2] + '<br>');
+      document.write('Soma: ' + info[3] + '<br>');
+
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

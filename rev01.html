@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      /*
+         1. Escreva um programa que lê o tamanho do lado de um quadrado e imprime um quadrado daquele tamanho com asteriscos. Seu programa deve funcionar para quadrados com lados de todos os tamanhos entre 1 e 20.
+            Por exemplo, para lado igual a 5:
+            *****
+            *****
+            *****
+            *****
+            *****
+      */
+
+      var tamLado;
+
+      do {
+         tamLado = parseInt(prompt('Tamanho do lado do quadrado (1 a 20):'));
+      } while(isNaN(tamLado) || tamLado < 1 || tamLado > 20);
+
+      for(var linha = 0; linha < tamLado; ++linha) {
+         for(var coluna = 0; coluna < tamLado; ++coluna) {
+            document.write('*');
+         }
+         document.write('<br>');
+      }
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

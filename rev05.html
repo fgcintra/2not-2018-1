@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+      
+      /*
+
+      5. Escreva um programa que receba do usuário um número entre 1 e 7 e retorne o nome do dia da semana correspondente: 1 é domingo e 7 é sábado. Faça a validação do isNaN() para a entrada do usuário e utilize a estrutura switch.
+
+      */
+
+      var diaSemana;
+
+      do {
+         diaSemana = parseInt(prompt('Informe o número do dia da semana (1 a 7):'));
+      } while(isNaN(diaSemana) || diaSemana < 1 || diaSemana > 7);
+
+      switch(diaSemana) {
+         case 1:
+            alert('Domingo');
+            break;
+
+         case 2:
+            alert('Segunda-feira');
+            break;
+
+         case 3:
+            alert('Terça-feira');
+            break;
+
+         case 4:
+            alert('Quarta-feira');
+            break;
+
+         case 5:
+            alert('Quinta-feira');
+            break;
+
+         case 6:
+            alert('Sexta-feira');
+            break;
+
+         default:
+            alert('Sábado');
+
+      }
+
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

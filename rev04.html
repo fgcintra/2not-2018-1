@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+      
+      /*
+         4. Escreva uma função que receba uma string e um número e escreva no documento HTML a string, repetindo o número de vezes especificado pelo número. Não é necessário retornar nada.
+      */
+
+      function repeteStr(str, vezes) {
+         for(var i = 0; i < vezes; ++i) {
+            document.write(str);
+         }
+      }
+
+      // MASSA DE TESTE
+      repeteStr('*', 100);
+      document.write('<br>');
+      repeteStr('juca', 15);
+
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

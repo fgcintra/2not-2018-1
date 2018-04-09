@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      /*
+         6. Escreva um programa que calcule qual é o 15º maior número primo.
+      */
+
+      var primos = [2]; // 2 é o primeiro número primo
+      var ehPrimo;
+         
+      for(var i = 3; primos.length < 15; i++) {
+         ehPrimo = true;
+         for(var j = 0; j < primos.length; ++j) {
+            if(i % primos[j] == 0) { // Dividiu, não é primo
+               ehPrimo = false;
+               break;
+            }
+         }
+         if(ehPrimo) {
+            primos.push(i);
+         }
+      }   
+
+      console.log(primos);
+      document.write('O 15º número primo é ' + primos[14]);
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

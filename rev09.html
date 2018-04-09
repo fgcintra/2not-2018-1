@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+      
+      /*
+
+         9. Escreva uma função que receba três números, representando dia, mês e ano, e retorne, como string, a data do dia segunte, no formato “dd/mm/aaaa”. Considere, para esse exercício, que fevereiro tem sempre 28 dias.      
+
+      */
+
+      function diaSeguinte(dia, mes, ano) {
+
+         switch(mes) {
+            // Meses de 31 dias
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+               if(dia < 1 || dia > 31) {
+                  return 'ERRO: Número de dias inválido para o mês';   
+               }
+               if(dia == 31 && mes == 12) {
+                  dia = 1;
+                  mes = 1;
+                  ano++;
+               }
+               else if (dia == 31) {
+                  dia = 1;
+                  mes++;
+               }
+               else {
+                  dia++;
+               }
+               break;
+
+            // Meses de 30 dias
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+               if(dia < 1 || dia > 30) {
+                  return 'ERRO: Número de dias inválido para o mês';   
+               }
+               if(dia == 30) {
+                  dia = 1;
+                  mes++;
+               }
+               else{
+                  dia++;
+               }
+               break;
+
+            // Fevereiro
+            case 2:
+               if(dia < 1 || dia > 28) {
+                  return 'ERRO: Número de dias inválido para o mês';     
+               }
+               if(dia == 28) {
+                  dia = 1;
+                  mes++;
+               }
+               else {
+                  dia++;
+               }
+               break;
+
+            default:
+               return 'ERRO: Mês inválido';
+
+         }
+
+         var strDia, strMes;
+         
+         if(dia < 10) {
+            strDia = '0' + dia;   
+         }
+         else{
+            strDia = dia;
+         }
+
+         if(mes < 10) {
+            strMes = '0' + mes;
+         }
+         else {
+            strMes = mes;
+         }
+
+         return strDia + '/' + strMes + '/' + ano;
+
+      }
+
+      // MASSA DE TESTE
+      document.write('Dia seguinte a 19/09/1975: ' + diaSeguinte(19, 9, 1975) + '<br>');
+      document.write('Dia seguinte a 31/12/1989: ' + diaSeguinte(31, 12, 1989) + '<br>');
+      document.write('Dia seguinte a 31/06/2006: ' + diaSeguinte(31, 6, 2006) + '<br>');
+      document.write('Dia seguinte a 28/02/2018: ' + diaSeguinte(28, 2, 2018) + '<br>');
+      document.write('Dia seguinte a 30/11/2010: ' + diaSeguinte(30, 11, 2010) + '<br>');
+
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>
