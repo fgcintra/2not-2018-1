@@ -19,19 +19,19 @@
       */
 
       function estat(vet) {
-         var ret = [0, 0, 0, 0];
+         var ret = [undefined, undefined, undefined, 0];
 
          for(var i = 0; i < vet.length; ++i) {
             // Soma
             ret[3] += vet[i];
 
             // Menor
-            if(vet[i] < ret[0]) {
+            if(vet[i] < ret[0] || ret[0] == undefined) {
                ret[0] = vet[i];
             }
 
             // Maior
-            if(vet[i] > ret[1]) {
+            if(vet[i] > ret[1] || ret[1] == undefined) {
                ret[1] = vet[i];
             } 
          }
@@ -43,10 +43,10 @@
       }
 
       // MASSA DE TESTES
-      var vetor = [19, 34, -2, 6, 87, 22, 90, 45, 0, 7, 39, 11];
+      var vetor = [19, 34, 12, 6, 87, 22, 90, 45, 70, 7, 39, 11];
       var info = estat(vetor);
 
-      document.write('Vetor: [19, 34, -2, 6, 87, 22, 90, 45, 0, 7, 39, 11]<br>');
+      document.write('Vetor: [19, 34, 12, 6, 87, 22, 90, 45, 70, 7, 39, 11]<br>');
       document.write('Menor número: ' + info[0] + '<br>');
       document.write('Maior número: ' + info[1] + '<br>');
       document.write('Média: ' + info[2] + '<br>');
