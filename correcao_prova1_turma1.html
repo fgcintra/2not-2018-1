@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      /*
+
+      Escreva uma função que receba o número do andar e retorne, como string, a destinação dele. Se o
+      andar não tiver destinação específica, retorne o valor 'Disponível'. Utilize, dentro da função, a
+      estrutura switch.
+
+      */
+
+      function destAndar(numAndar) {
+
+         switch(numAndar) {
+            case 23: 
+            case 57: 
+            case 100:
+               return 'Praça de alimentação';
+               break;
+
+            case 22:
+            case 56:
+            case 99:
+               return 'Shopping center';
+               break;
+
+            case 63:
+               return 'Museu';
+               break;
+
+            case 80:
+               return 'Cinemas';
+               break;
+
+            case 6:
+            case 101:
+               return 'Joalherias';
+               break;
+
+            case 108: // Último andar
+               return 'Mirante';
+               break;
+
+            default:
+               return 'Disponível';
+         }
+      }
+
+      /*
+
+      Fora da função, obtenha do usuário um número de andar e retorne a ele, com alert(), a destinação do
+      andar informado utilizando uma chamada à função anteriormente definida. Valide a entrada do usuário,
+      repetindo a pergunta até que ele informe um número válido e que não seja múltiplo de 13.
+
+      */
+
+      var andar;
+
+      do {
+         andar = parseInt(prompt('Informe o número do andar:'));
+      } while(isNaN(andar) || andar % 13 == 0 || andar <= 0 || andar > 108);
+
+      alert('Neste andar há: ' + destAndar(andar));
+
+      /*
+
+         Escreva outra função, que não receba nenhum argumento e retorne um vetor com a numeração dos 100
+         andares do superprédio. Utilize a instrução continue para saltar os andares múltiplos de 13.
+
+      */
+
+      function numeracaoAndares() {
+         var andares = [];
+
+         for(var i = 1; andares.length < 100; ++i) {
+            
+            if(i % 13 == 0) { // Múltiplo de 13
+               continue;
+            }
+
+            andares.push(i);
+         }
+
+         console.log(andares);
+
+         return andares;
+
+      }
+
+      /*
+         Fora da função, chame-a e armazene seu retorno em uma variável. Escreva um loop que percorra o
+         vetor retornado e exiba no documento, em ordem inversa, a numeração dos andares do superprédio, um
+         número por linha
+      */
+
+      var todosAndares = numeracaoAndares();
+
+      for(var n = todosAndares.length - 1; n >= 0; --n) {
+         document.write(todosAndares[n] + '<br>');
+      }
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

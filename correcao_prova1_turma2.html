@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      /*
+         Escreva uma função que não receba nenhum argumento e retorne um vetor com todos os quilômetros
+         nos quais haverá pedágio, no sentido Franca – São Paulo, lembrando que o km 1 fica em São Paulo.
+         Utilize um laço for para construir o vetor.
+      */
+
+      function pedagios() {
+         var ped = [];
+
+         for(var i = 37; i <= 400; i += 37) {
+            ped.unshift(i); // Sempre coloca o novo na 1ª posição
+         }
+
+         console.log(ped);
+
+         return ped;
+      }
+
+      /*
+         Escreva uma segunda função, que receba o número de um quilômetro e verifique se há algo nele. Essa
+         função deve, em primeiro lugar, chamar a função que retorna o vetor com os quilômetros onde haverá
+         pedágio e guardar seu resultado em uma variável. Em seguida, utilizando indexOf(), verifique se o quilômetro passado como argumento tem ou não pedágio. Se houver, retorne 'Pedágio' como
+         resultado da função.
+
+      */
+
+      function existeKm(km) {
+
+         var kmPedagios = pedagios();
+
+         if(kmPedagios.indexOf(km) >= 0) { // Tem pedágio
+            return 'Pedágio';
+         }
+         else {
+
+            /*
+
+               Ainda dentro da segunda função, se o quilômetro passado como argumento não tiver pedágio, utilize a
+               estrutura switch para verificar se esse quilômetro possui algumas das melhorias previstas e retorne, se
+               for o caso, o nome da melhoria. Se não houver nada no quilômetro, retorne 'Nada aqui. Siga em
+               frente...'.
+
+            */
+
+            switch(km) {
+               case 97:
+               case 189:
+               case 282:
+               case 378:
+                  return 'Posto de recarga para carros elétricos';
+                  break;
+
+               case 150:
+               case 350:
+                  return 'Posto da Polícia Rodoviária';
+                  break;
+
+               case 144:
+                  return 'Integração com trem ultrarrápido';
+                  break;
+
+               case 203:
+                  return 'Pernoite seguro para caminhoneiros';
+                  break;
+
+               case 310:
+                  return 'Shopping center';
+                  break;
+
+               case 354:
+                  return 'Acesso a parque de diversões';
+                  break;
+
+               default:
+                  return 'Nada aqui... Siga em frente';
+            }
+
+
+         }
+
+      }
+
+      /*
+
+         Fora das duas funções, obtenha do usuário um número de quilômetro e retorne a ele, com alert(), o
+         que existe naquele quilômetro, utilizando uma chamada à função anteriormente definida. Valide a
+         entrada do usuário, repetindo a pergunta até que ele informe um número válido e que esteja entre 1 e
+         400 (inclusive).
+
+      */
+
+      var numKm;
+
+      do {
+         numKm = parseInt(prompt('Informe o número do km:'));
+      } while (isNaN(numKm) || numKm < 1 || numKm > 400);
+
+      alert(existeKm(numKm));        
+               
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

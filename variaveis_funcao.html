@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      let soma1 = function(x, y) {
+         return x + y;
+      }
+
+      alert(soma1(3, 4));
+
+      let soma2 = (x , y) => x + y;
+
+      alert(soma2(3, 4));
+
+      let teste1 = function() {
+         alert('Testando!');
+         return true;
+      }
+
+      let teste2 = () => {
+         alert('Testando!');
+         return true;
+      }
+
+      teste1();
+      teste2();
+
+      let potencia1 = function(x) {
+         return x * x;
+      }
+
+      let potencia2 = x => x * x; // Lambda
+
+      alert(potencia1(7));
+      alert(potencia2(7));
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>
