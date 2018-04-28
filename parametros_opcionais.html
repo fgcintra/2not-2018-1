@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      // Parâmetros opcionais
+      function potencia(base, expoente = 2, mostrar = false) {
+         // expoente é um parâmetro opcional que, se não for
+         // passado, assumirá o valor 2
+
+         // mostrar é um parâmetro opcional que, se não for passado,
+         // assumirá o valor false
+         
+         let res = base ** expoente; // ** = exponenciação, desde ES5 (2014)
+
+         if(mostrar) {
+            document.write(`[${res}] -> `); // Interpolação de variável
+            // Equivale a: document.write('[' + res + '] -> ');
+         }
+
+         return res; 
+      }
+
+      // Só foi passado 1 parâmetro, o segundo assume seu valor
+      // default (2) e o terceiro também (false)
+      document.write('5 ** 2 = ' + potencia(5) + '<br>');
+      
+      document.write('5 ** 2 = ' + potencia(5, 2, true) + '<br>');
+      document.write('5 ** 3 = ' + potencia(5, 3) + '<br>');
+      document.write('5 ** 1 = ' + potencia(5, 1, true) + '<br>');
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>

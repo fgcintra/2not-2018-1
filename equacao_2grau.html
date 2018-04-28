@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      /*
+      let delta = function(a, b, c) {
+         return b**2 + 4 * a * c;
+      }
+      */
+
+      let delta = (a, b, c) => b**2 - 4 * a * c;
+
+      let raizes = (a, b, c) => {
+         let res = [];
+
+         // Cálculo do delta
+         let d = delta(a, b, c);
+         console.log('DELTA = ' + d);
+
+         // Sem solução
+         if(d < 0) {
+            return res; // Vetor vazio
+         }
+         // Delta = 0, apenas uma raiz possível
+         else if(d == 0) {
+            let raiz = -b / (2 * a);
+            res.push(raiz);
+         }
+         // Delta > 0, duas raízes
+         else {
+
+            // Math.sqrt(): calcula raiz quadrada
+            let raiz1 = (-b + Math.sqrt(d)) / (2 * a);
+            let raiz2 = (-b - Math.sqrt(d)) / (2 * a);
+
+            res.push(raiz1);
+            res.push(raiz2);
+
+         }
+
+         return res;
+      }
+
+      // MASSA DE TESTES
+      console.log('a = 3, b = 4, c = 1');
+      console.log(raizes(3, 4, 1));
+
+      console.log('a = 3, b = 2, c = 0');
+      console.log(raizes(3, 2, 0));
+
+      console.log('a = 2, b = 0, c = 1');
+      console.log(raizes(2, 0, 1));
+
+      console.log('a = 2, b = 3, c = -1');
+      console.log(raizes(2, 3, -1));
+
+      console.log('a = 2, b = 4, c = 2');
+      console.log(raizes(2, 4, 2));
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>
