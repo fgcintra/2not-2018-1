@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+      <script type="text/javascript">
+
+      /*
+         
+         * Declare e inicialize um vetor vazio.
+         * Declare um loop eterno.
+         * Dentro do loop eterno, declare e inicialize um objeto vazio
+         * Peça ao usuário para informar um nome. Se o usuário deixar 
+            em branco o nome, interrompa o loop eterno.
+         * Caso contrário, peça também idade e salário. Essas três
+            informações (nome, idade e salário) devem ser salvas em
+            propriedades do objeto anteriormente declarado.
+         * Acrescente o objeto ao vetor.
+         * Fora do loop eterno, mostre as seguintes informações:
+           - Soma dos salários de todos os funcionários informados
+           - Média dos salários de todos os funcionários informados
+           - Média da idade de todos os funcionários informados
+
+      */
+
+      let vetor = []; // Vetor vazio
+
+      for(;;) {
+        let func = {};  // Objeto vazio
+
+        func.nome = prompt('Nome do funcionário');
+
+        if(func.nome == '') break;
+
+        do {
+          func.idade = parseInt(prompt('Idade do funcionário:'));
+        } while(isNaN(func.idade));
+
+        do {
+          func.salario = parseFloat(prompt('Salário do funcionário'));
+        } while(isNaN(func.salario));
+
+        // Coloca o objeto no vetor
+        vetor.push(func);
+
+      }
+
+      let somaSalarios = 0, somaIdades = 0;
+
+      for(let i = 0; i < vetor.length; ++i) {
+        document.write(vetor[i].nome + '<br>');
+        document.write(vetor[i].idade + '<br>');
+        document.write(vetor[i].salario + '<br>');
+        document.write('------------------------<br>');
+        somaSalarios += vetor[i].salario;
+        somaIdades += vetor[i].idade;
+      }
+
+      let mediaSalarios = somaSalarios / vetor.length;
+      let mediaIdades = somaIdades / vetor.length;
+
+      document.write(`Soma dos salários: ${somaSalarios}<br>`);
+      document.write(`Média dos salários: ${mediaSalarios}<br>`);
+      document.write(`Média de idade: ${mediaIdades}<br>`);
+      
+      </script>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+</html>
