@@ -37,7 +37,11 @@
          'nome da mãe': 'Pitchula'
       };
 
-      let obj2 = obj1;
+      // Não copia
+      //let obj2 = obj1; 
+      
+      // Copia (faz o clone do objeto)
+      let obj2 = JSON.parse(JSON.stringify(obj1)); 
 
       obj2.nome = 'Mimi';
       obj2.raça = 'Poodle toy';
