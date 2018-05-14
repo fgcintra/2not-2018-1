@@ -31,8 +31,8 @@
          console.log('"Aeroporto".charAt(7): ' + "Aeroporto".charAt(7));
 
          // concat(): emenda duas ou mais strings em uma terceira
-         let ditado = concat(str1, ' ', str2);
-         console.log("concat(str1, ' ', str2) :" + ditado);
+         let ditado = str1.concat(' ', str2);
+         console.log("str1.concat(' ', str2) :" + ditado);
 
          // indexOf(): retorna a primeira posição de uma substring dentro da string
          // (ou -1, se não achar a substring)
@@ -64,8 +64,10 @@
          // Os pedaços gerados compõem um vetor
          let vet1 = str1.split(' ');
          let vet2 = str1.split('r');
+         let vet3 = str1.split(/[Rr]/);
          console.log("str1.split(' '): " + vet1);
          console.log("str1.split('r'): " + vet2);
+         console.log("str1.split(/[Rr]/): " + vet3);
 
          // trim(): tira os espaços em branco no início e no final da string;
          let str5 = '      E viveram felizes para sempre     ';
@@ -76,6 +78,19 @@
          // que, na sintaxe da função, a substring a ser substituida aparece entre barras
          let str6 = str1.replace(/roupa/, 'rapadura');
          console.log("str1.replace(/roupa/, 'rapadura'): " + str6);
+
+         // CARACTERES ESPECIAIS
+         
+         // \n: gera uma quebra de linha (NÃO funciona com document.write())
+         console.log('Primeira linha\nSegunda linha');
+
+         // \' e \": para usar aspas simples ou duplas dentro de strings delimitadas
+         // por elas mesmas
+         console.log('Caixa d\'água');
+         console.log("Não gosto da música \"Royals\"");
+
+         // \\: para escrever barras invertidas
+         console.log('C:\\Windows\\System32\\dxd3.dll');
       
       </script>
 
