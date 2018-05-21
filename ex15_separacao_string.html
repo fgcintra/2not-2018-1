@@ -31,6 +31,63 @@
 
       */
       
+      // 1)
+      let entrada = prompt('Informe uma string com várias palavras e números separados por espaços');
+
+      // 2)
+      let partes = entrada.split(' ');
+
+      // 3)
+      let palavras = [], numeros = [];
+
+      // 4)
+      for(let i = 0; i < partes.length; i++) {
+         if(isNaN(partes[i])) {
+            inserir(partes[i], palavras);
+         }
+         else {
+            // parseFloat garante que será ordenado como número
+            inserir(parseFloat(partes[i]), numeros);
+         }
+
+      }
+
+      function inserir(el, vetor) {
+         // Se o vetor estiver vazio, basta dar push no primeiro elemento
+         if(vetor.length == 0) {
+            vetor.push(el);
+         }
+         else {
+            let inserido = false;
+            // Percorremos os elementos do vetor
+            for(let i = 0; i < vetor.length; i++) {
+               // Se o valor do elemento atual do vetor for maior
+               // que o valor do elemento, é aí que ele deve ser inserido
+               if (vetor[i] > el) {
+                  vetor.splice(i, 0, el);
+                  inserido = true;
+                  break;
+               }
+            }
+            // Se passou todo o for sem ter inserido, insere ao final
+            if (! inserido) {
+               vetor.push(el);
+            }
+         }
+      }         
+
+      // 5)
+      let palavrasStr = palavras.join(',');
+      let numerosStr = numeros.join(',');
+
+      console.log(partes);      
+      console.log(palavras);
+      console.log(numeros);
+
+      document.write(palavrasStr);
+      document.write('<br>');
+      document.write(numerosStr);
+
       </script>
 
    </head>

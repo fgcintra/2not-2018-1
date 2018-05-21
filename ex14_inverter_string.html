@@ -15,6 +15,25 @@
          a lógica de inversão dentro de uma função. Utilize um loop for.
 
       */
+
+      // Método 1: inversão com for
+      function inverterStr(str) {
+         let inv = '';
+         for(let i = str.length - 1; i >= 0; --i) {
+            // Inversão feita caractere a caractere
+            inv += str.charAt(i);
+         }
+         return inv;
+      }
+
+      let entrada = prompt('Informe a string a ser invertida:');
+      
+      alert(inverterStr(entrada));
+
+      // Método 2: string -> vetor -> reverse() -> string
+      let saida = entrada.split('').reverse().join('');
+
+      alert(saida);
       
       </script>
 
