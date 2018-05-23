@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+
+      <p>Lista das linguagens mais populares:</p>
+      <ol><!-- Lista ordenada -->
+         <li>Javascript</li> <!-- Item da lista -->
+         <li>PHP</li>
+         <li>Java</li>
+         <li>Python</li>
+         <li>C</li>
+         <li>C#</li>
+      </ol>
+      
+      <script type="text/javascript">
+         // children = vetor de filhos
+         let n = document.body.children.length;
+         alert(n);
+
+         let tags = '';
+         for (let i = 0; i < document.body.children.length; i++) {
+            tags += document.body.children[i].tagName + '\n';
+         }
+
+         alert(tags);
+
+      </script>
+
+   </body>
+
+</html>

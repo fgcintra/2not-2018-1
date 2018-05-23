@@ -6,6 +6,19 @@
       <meta charset="utf8" />
       <title>Página-modelo HTML</title>
 
+      <style>
+          
+          table {
+             /* Evita espaço entre as bordas das células */
+             border-collapse: collapse;
+          }
+          
+          table, td, th {
+             border: 1px solid black;
+          }
+          
+      </style>
+
       <script type="text/javascript">
 
       /*
@@ -32,6 +45,35 @@
 
       */
       
+      // 1)
+      let str = prompt('Informe as palavras separadas por espaços');
+
+      // 2)
+      let palavras = str.split(' ');
+
+      document.write('<table>');
+
+      // Linha de cabeçalho
+      document.write('<tr>');
+      document.write('<th>ORIGINAL</th>');
+      document.write('<th>COMPRIMENTO</th>');
+      document.write('<th>MINÚSCULAS</th>');
+      document.write('<th>MAIÚSCULAS</th>');
+      document.write('</tr>');
+
+      for(let i = 0; i < palavras.length; i++) {
+         document.write('<tr>');
+
+         document.write(`<td>${palavras[i]}</td>`); // original
+         document.write(`<td>${palavras[i].length}</td>`); // comprimento
+         document.write(`<td>${palavras[i].toLowerCase()}</td>`); // minúsculas
+         document.write(`<td>${palavras[i].toUpperCase()}</td>`); // maiúsculas
+
+         document.write('</tr>');
+      }
+
+      document.write('</table>');
+
       </script>
 
    </head>
