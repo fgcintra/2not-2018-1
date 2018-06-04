@@ -7,22 +7,65 @@
       <title>Página-modelo HTML</title>
 
    </head>
+
+   <style>
+      
+      /* REGRA DE TAG: afeta todas as tags do seu tipo */
+      p {
+         color: blue;
+         font-weight: bold;
+      }
+
+      li {
+         font-family: "Times New Roman", times, serif;
+         color: green;
+      }
+
+      /* REGRA DE CLASSE: afeta apenas os elementos cujo atributo class
+         coincida com o nome da classe. Uma regra de classe sempre começa com
+         um ponto (.) */
+      .sublinhado {
+         text-decoration: underline;
+      }
+
+      .maiusc {
+         text-transform: uppercase;
+      }
+
+      /* REGRA DE ID: afeta apenas o elemento do id informado. Regras de id
+         sempre começam com cerquilha (#). */
+      #java {
+         color: red;
+         font-style: italic;
+      }
+
+      #info {
+         padding: 4px;
+         border: 1px solid orange;
+         border-radius: 4px;
+      }
+
+   </style>
    
    <body>
-      <h1>Título da página</h1>
+      <h1 class="sublinhado">Título da página</h1>
       <p>Isto é um parágrafo.</p>
 
-      <p>Lista das linguagens mais populares:</p>
+      <p class="maiusc">Lista das linguagens mais populares:</p>
       <ol><!-- Lista ordenada -->
          <li>Javascript</li> <!-- Item da lista -->
          <li>PHP</li>
-         <li>Java</li>
+         <li id="java">Java</li>
          <li>Python</li>
          <li>C</li>
          <li>C#</li>
       </ol>
+
+      <p id="info" class="maiusc sublinhado"></p>
       
       <script type="text/javascript">
+         // DOM = Document Object Model
+         
          // children = vetor de filhos
          let n = document.body.children.length;
          alert(n);
@@ -33,6 +76,45 @@
          }
 
          alert(tags);
+
+         // firstElementChild: retorna o primeiro elemento-filho 
+         // do elemento-pai informado, no caso, body
+         alert('Primeiro elemento de body: ' + document.body.firstElementChild.tagName);
+
+         // lastElementChild: retorna o último elemento-filho
+         // do elemento-pai informado, no caso, body
+         alert('Último elemento de body: ' + 
+            document.body.lastElementChild.tagName);
+
+         // getElementsByTagName(): retorna um vetor (note o plural
+         // em Elements) dos elementos-filho de acordo com a tag informada
+
+         let parags = document.body.getElementsByTagName('p');
+
+         // Modificando o texto do _SEGUNDO_ parágrafo
+         parags[1].innerHTML = 'Lista das linguagens mais populares (ATUALIZADA):';
+
+         // Modificando o texto do _TERCEIRO_ parágrafo
+         parags[2].innerHTML = `Esta página contém ${document.body.children.length} elemento(s)`;
+
+         console.log(parags);
+
+         // Mesmo que haja apenas um elemento do tipo, getElementsByTagName() _SEMPRE_
+         // vai retornar um vetor
+         let lista = document.body.getElementsByTagName('ol');
+
+         // Todos os itens da única lista (posição 0) que temos nesta página
+         let itensLista = lista[0].children;
+
+         // Alterando o texto do primeiro item da lista ordenada
+         lista[0].children[0].innerHTML = 'Javascript (Ueba!)';
+
+         // getElementById(): retorna o elemento cujo id coincide com o parâmetro
+         // passado. Ele sempre retorna um elemento existente ou undefined se não
+         // existir elemento com o id informado
+         let itemJava = document.getElementById('java');
+
+         itemJava.innerHTML = 'Kotlin';
 
       </script>
 
