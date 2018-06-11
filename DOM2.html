@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+
+      <h2>Linguagens de programação mais populares</h2>
+      <ol id="lista">
+         <li id="js">Javascript</li>
+         <li id="java">Java</li>
+         <li id="python">Python</li>
+         <li id="php">PHP</li>
+         <li id="csharp">C#</li>
+         <li id="swift">Swift</li>
+      </ol>
+
+      <script type="text/javascript">
+
+         // Inserindo um novo item no meio da lista
+
+         // Passo 1: obtendo a lista
+         let lista = document.getElementById('lista');
+
+         // Passo 2: criando o novo item da lista
+         let lingc = document.createElement('li');
+
+         // Passo 3: localizando o item correspondente ao Java.
+         // O novo item entrará acima dele
+         let java = document.getElementById('java');
+
+         // Passo 4: inserindo o novo elemento no lugar
+         lista.insertBefore(lingc, java);
+
+         // Passo 5: com o elemento já no lugar, podemos alterar
+         // suas propriedades
+         lingc.id = 'lingc';
+         lingc.innerHTML = 'C';
+
+         /*
+            querySelector() e querySelectorAll()
+         */
+
+      </script>
+
+   </body>
+
+</html>

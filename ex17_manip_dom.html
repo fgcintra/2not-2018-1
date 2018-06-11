@@ -66,6 +66,42 @@
 
       */
 
+      // 1. Altere o texto do cabeçalho para "Estoque de frutas"
+      let cabec = document.getElementById('cabec');
+      cabec.innerHTML = 'Estoque de frutas';
+
+      // Alternativa:
+      // document.getElementById('cabec').innerHTML = 'Estoque de frutas';
+
+      // 2. Coloque textos explicativos em todos os parágrafos
+      let parags = document.body.getElementsByTagName('p');
+
+      parags[0].innerHTML = 'Este é um exemplo de manipulação do DOM.';
+      parags[1].innerHTML = 'Estamos manipulando os elementos da página ao vivo com Javascript.';
+      parags[2].innerHTML = 'Vamos somar a quantidade de frutas da tabela abaixo.';
+      parags[3].innerHTML = 'Vamos também passar os textos da tabela para maiúsculas.';
+
+      //  3. Some a quantidade de frutas da primeira linha e informe em um alert()
+
+      // 3.1 Como temos apenas uma tabela na página, podemos obter diretamente todas as linhas
+      // (tr) desta tabela
+      let linhasTab = document.body.getElementsByTagName('tr');
+
+      // As quantidades estão na primeira linha (posição 0 de linhasTab)
+      let soma = 0;
+      for(let i = 0; i < linhasTab[0].children.length; i++) {
+         soma += parseInt(linhasTab[0].children[i].innerHTML);
+      }
+
+      alert('Total de frutas: ' + soma);
+
+      // 4. Passe o nome das frutas da segunda linha para maiúsculas
+
+      // Os nomes das frutas estão na segunda linha (posição 1 de linhasTab)
+      for(let y = 0; y < linhasTab[1].children.length; y++) {
+         linhasTab[1].children[y].innerHTML = linhasTab[1].children[y].innerHTML.toUpperCase();
+      }
+
    </script>
 
 
