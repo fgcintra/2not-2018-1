@@ -46,7 +46,48 @@
 
          /*
             querySelector() e querySelectorAll()
+
+            Essas duas funções utilizam o mesmo método que o CSS
+            para localizar elementos na página
+
          */
+
+         // Usando querySelector() para buscar um elemento por id
+         let csharp = document.querySelector('#csharp');
+         csharp.innerHTML = 'C# (tecnologias .Net)';
+
+         // Usando querySelector() para buscar o PRIMEIRO elemento de
+         // um tipo
+         let primeiroItem = document.querySelector('#lista').querySelector('li');
+
+         // Se quisermos todos os itens da lista (em um vetor), utilizamos
+         // querySelectorAll()
+         let vetorItens = document.querySelector('#lista').querySelectorAll('li');
+
+         /*
+            Inserção de elemento-filho ao final
+         */
+
+         // Inserindo um parágrafo no fim da página: appendChild()
+         let novoParag = document.createElement('p');
+         document.body.appendChild(novoParag);
+         novoParag.innerHTML = '(Os resultados podem variar.)';
+
+         /*
+            Exclusão de elemento: removeChild()
+         */
+         lista.removeChild(lista.querySelector('#swift'));
+
+
+         /*
+            Trocando um elemento por outro: replaceChild()
+         */
+
+         let kotlin = document.createElement('li');
+         lista.replaceChild(kotlin, document.querySelector('#java'));
+
+         kotlin.innerHTML = 'Kotlin';
+
 
       </script>
 
