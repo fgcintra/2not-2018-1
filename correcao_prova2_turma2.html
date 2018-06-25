@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <!-- Ajusta a acentuação -->
+      <meta charset="utf8" />
+      <title>Página-modelo HTML</title>
+   </head>
+   
+   <body>
+      <h1>Título da página</h1>
+      <p>Isto é um parágrafo.</p>
+   </body>
+
+      <script type="text/javascript">
+
+         // Declare um vetor vazio.
+         let vet = [];
+
+         // Crie quatro objetos, que representam seleções de futebol, cada qual com os seguintes atributos:
+         // nome, pontos, gols pró e gols contra.Coloque - os no vetor declarado anteriormente.
+
+         let obj1 = {
+            nome: 'Brasil',
+            pontos: 4,
+            gols_pro: 4,
+            gols_contra: 1
+         };
+         vet.push(obj1);  // Colocado no vetor
+
+         let obj2 = {
+            nome: 'Argentina',
+            pontos: 1,
+            gols_pro: 1,
+            gols_contra: 3
+         };
+         vet.push(obj2);
+
+         let obj3 = {}; // Objeto vazio
+         obj3.nome = 'Alemanha';
+         obj3.pontos = 2;
+         obj3.gols_pro = 3;
+         obj3.gols_contra = 3;
+         vet.push(obj3);
+
+         let obj4 = {};
+         obj4.nome = 'Rússia';
+         obj4.pontos = 6;
+         obj4.gols_pro = 8;
+         obj4.gols_contra = 2;
+         vet.push(obj4);
+
+         // Utilize a manipulação de DOM e estruturas de repetição para construir uma tabela. Esta tabela 
+         // deverá exibir cada um dos objetos do vetor, um por linha.As colunas da tabela devem exibir o nome
+         // da seleção, os pontos, o número de gols pró, o número de gols contra e o saldo de gols.
+
+         // Tabela
+         let tabela = document.createElement('table');
+         document.body.appendChild(tabela);
+
+         // Linha de cabeçalho
+         let linhaCabec = document.createElement('tr');
+         tabela.appendChild(linhaCabec);
+
+         // 1ª célula da linha de cabeçalho
+         let celCabec1 = document.createElement('th');
+         linhaCabec.appendChild(celCabec1);
+         celCabec1.innerHTML = 'Seleção';
+
+         // 2ª célula da linha de cabeçalho
+         let celCabec2 = document.createElement('th');
+         linhaCabec.appendChild(celCabec2);
+         celCabec2.innerHTML = 'Pontos';
+
+         // 3ª célula da linha de cabeçalho
+         let celCabec3 = document.createElement('th');
+         linhaCabec.appendChild(celCabec3);
+         celCabec3.innerHTML = 'Gols pró';
+
+         // 4ª célula da linha de cabeçalho
+         let celCabec4 = document.createElement('th');
+         linhaCabec.appendChild(celCabec4);
+         celCabec4.innerHTML = 'Gols contra';
+
+         // 5ª célula da linha de cabeçalho
+         let celCabec5 = document.createElement('th');
+         linhaCabec.appendChild(celCabec5);
+         celCabec5.innerHTML = 'Saldo de gols';
+
+         for(let i = 0; i < vet.length; ++i) {
+            
+            let linha = document.createElement('tr');
+            tabela.appendChild(linha);
+
+            let cel1 = document.createElement('td');
+            linha.appendChild(cel1);
+            cel1.innerHTML = vet[i].nome;
+
+            let cel2 = document.createElement('td');
+            linha.appendChild(cel2);
+            cel2.innerHTML = vet[i].pontos;
+
+            let cel3 = document.createElement('td');
+            linha.appendChild(cel3);
+            cel3.innerHTML = vet[i].gols_pro;
+
+            let cel4 = document.createElement('td');
+            linha.appendChild(cel4);
+            cel4.innerHTML = vet[i].gols_contra;
+
+            let cel5 = document.createElement('td');
+            linha.appendChild(cel5);
+            cel5.innerHTML = vet[i].gols_pro - vet[i].gols_contra;
+
+         }
+
+      </script>
+
+</html>
